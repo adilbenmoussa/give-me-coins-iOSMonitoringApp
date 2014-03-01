@@ -4,10 +4,7 @@ Give-me-coins.com iOS monitoring app
 Give-me-coins.com monitoring app is useful for monitoring your BTC, LTC or FTC workers. It implements QR Code reader and save settings as well as whole pool monitoring tab.
 XCode 5 was used for the creation of this app.
 
-![alt tag](https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp/blob/master/Images/icon1@2.png?raw=true)
-![alt tag](https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp/blob/master/Images/icon2@2.png?raw=true)
-![alt tag](https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp/blob/master/Images/icon3@2.png?raw=true)
-![alt tag](https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp/blob/master/Images/icon4@2.png?raw=true)
+![alt tag](https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp/blob/master/Images/GITHUB.png?raw=true)
 
 Donations And/Or Suggestions:
 -------------------------
