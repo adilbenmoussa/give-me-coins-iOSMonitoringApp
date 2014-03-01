@@ -28,6 +28,3 @@ LICENSE:
 This program is developed under GPLv3 license. For more information
 please check LICENSE.md file.
 
-
-https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp/blob/master/Images/icon2@2.png?raw=true
-
