@@ -10,10 +10,10 @@ Donations And/Or Suggestions:
 -------------------------
 Donations, tips and suggestions are more than welcome.
 
-BTC: 1JoAGrCyb4UneqCngzxjDvo6x4PR7AnRHz
-LTC: LZrN28A9VDfPzCVuKNikNoSp9JrwgP7AEC
-FTC: 6mobosJPJkd1AsFGvF8gA1QquBXPLnHanZ
-Mail: adil.benmoussa@gmail.com
+- BTC: 1JoAGrCyb4UneqCngzxjDvo6x4PR7AnRHz
+- LTC: LZrN28A9VDfPzCVuKNikNoSp9JrwgP7AEC
+- FTC: 6mobosJPJkd1AsFGvF8gA1QquBXPLnHanZ
+- Mail: adil.benmoussa@gmail.com
  
 
 Used Libraries And Icons:
