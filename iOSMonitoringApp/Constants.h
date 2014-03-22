@@ -27,6 +27,7 @@
 // Safe releases
 #define RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }
 
+#define UA_runOnMainThread if (![NSThread isMainThread]) { dispatch_sync(dispatch_get_main_queue(), ^{ [self performSelector:_cmd]; }); return; };
 
 //Define the constants
 #define poolMinerPrefix @"https://give-me-coins.com/pool/api-%@tc?api_key=%@"
