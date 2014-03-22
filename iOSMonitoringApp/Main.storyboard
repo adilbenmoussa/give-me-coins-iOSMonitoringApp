@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZgP-Qi-Zwh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZgP-Qi-Zwh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -108,11 +108,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxF-ls-IxG">
+                                <rect key="frame" x="240" y="334" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="UJb-iK-Nez" eventType="valueChanged" id="PGD-v7-PiD"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show VTC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pE-l0-pOt">
+                                <rect key="frame" x="31" y="339" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQn-v2-znc">
-                                <rect key="frame" x="12" y="398" width="303" height="120"/>
+                                <rect key="frame" x="12" y="413" width="303" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Once you enter your API key, please hit save settings. At this moment the data on Summary and Pool should start updating. In case you do not receive any data, press on the refresh button to try it again. I would love to hear any additional feedback and ideas to improve this app.
+                                <string key="text">Once you enter your API key, please hit save settings. At this moment the data on Summary and Pool should start updating. In case you do not receive any data, press on the refresh button to try it again. I would love to hear any additional feedback and ideas to improve this app.
 If you find any bugs please report at: https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp
 
 Donations are more than welcome:
@@ -123,7 +136,7 @@ This app uses the following libraries and icons:
 - ZBar: http://zbar.sourceforge.net/iphone/sdkdoc/
 - iToast: https://github.com/ecstasy2/toast-notifications-ios
 - Icons8: http://www.icons8.com
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
@@ -145,7 +158,7 @@ This app uses the following libraries and icons:
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dl-6L-NZs">
-                                <rect key="frame" x="199" y="342" width="105" height="30"/>
+                                <rect key="frame" x="199" y="371" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delete Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,7 +168,7 @@ This app uses the following libraries and icons:
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dob-UL-2vh">
-                                <rect key="frame" x="30" y="342" width="95" height="30"/>
+                                <rect key="frame" x="30" y="371" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -176,6 +189,7 @@ This app uses the following libraries and icons:
                         <outlet property="ftcSwitch" destination="WDf-d9-dC9" id="AVq-rr-rTU"/>
                         <outlet property="ltcSwitch" destination="Spl-bk-ugP" id="EFK-IV-Oks"/>
                         <outlet property="saveSettingsButton" destination="dob-UL-2vh" id="3X9-Xe-dsI"/>
+                        <outlet property="vtcSwitch" destination="pxF-ls-IxG" id="Zbo-Rn-t94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eY-CT-1Cq" userLabel="First Responder" sceneMemberID="firstResponder"/>

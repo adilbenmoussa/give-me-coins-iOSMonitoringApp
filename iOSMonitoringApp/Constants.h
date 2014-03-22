@@ -37,6 +37,7 @@
 #define BTCColor() RGBCOLOR(255, 153, 0)
 #define LTCColor() RGBCOLOR(61, 122, 184)
 #define FTCColor() RGBCOLOR(153, 102, 153)
+#define VTCColor() RGBCOLOR(129, 153, 77)
 
 
 #define BOLD14() [UIFont boldSystemFontOfSize:14.0f]

@@ -28,11 +28,6 @@
 @implementation PoolController
 @synthesize poolStatusLbl, poolHashrateLbl, poolActiveWorkersLbl, poolSharesThisRoundLbl, poolLastBlockIdLbl, poolLastBlockSharesLbl, poolLastBlockFoundByLbl, poolLastBlockRewardLbl, poolDifficultyLbl;
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

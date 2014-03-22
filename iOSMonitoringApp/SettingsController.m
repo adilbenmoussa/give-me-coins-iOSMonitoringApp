@@ -31,10 +31,12 @@
 @implementation SettingsController
 @synthesize apiText, descriptionText;
 @synthesize saveSettingsButton, deleteSettingsButton;
-@synthesize btcSwitch, ltcSwitch, ftcSwitch;
-- (void)viewDidLoad
+@synthesize btcSwitch, ltcSwitch, ftcSwitch, vtcSwitch;
+
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     
     //sets the border of the api text border
     apiText.layer.borderWidth = 0.5f;
@@ -61,6 +63,7 @@
         btcSwitch.on = [[settings objectForKey:@"showBTC"] integerValue] == 1;
         ltcSwitch.on = [[settings objectForKey:@"showLTC"] integerValue] == 1;
         ftcSwitch.on = [[settings objectForKey:@"showFTC"] integerValue] == 1;
+        vtcSwitch.on = [[settings objectForKey:@"showVTC"] integerValue] == 1;
         apiText.text = [settings objectForKey:@"apiKey"];
     }
     else{
@@ -113,6 +116,7 @@
                               [NSNumber numberWithInt:btcSwitch.on ? 1 : 0], @"showBTC",
                               [NSNumber numberWithInt:ltcSwitch.on ? 1 : 0], @"showLTC",
                               [NSNumber numberWithInt:ftcSwitch.on ? 1 : 0], @"showFTC",
+                              [NSNumber numberWithInt:vtcSwitch.on ? 1 : 0], @"showVTC",
                               nil];
     [prefs setObject:settings forKey:@"settings"];
     [prefs synchronize];
@@ -136,6 +140,7 @@
     btcSwitch.on = YES;
     ltcSwitch.on = YES;
     ftcSwitch.on = YES;
+    vtcSwitch.on = YES;
     apiText.text = local(@"Your API key with /pool/api-ltc...");
     
     [[iToast makeText:local(@"Settins has been successfully deleted.")] show];

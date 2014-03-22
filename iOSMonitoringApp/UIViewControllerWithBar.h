@@ -25,7 +25,8 @@ typedef enum
 {
     BTC = 0,
     LTC,
-    FTC
+    FTC,
+    VTC
 }CoinType;
 
 @interface UIViewControllerWithBar : UIViewController{

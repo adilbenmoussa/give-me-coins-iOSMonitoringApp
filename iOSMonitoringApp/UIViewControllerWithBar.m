@@ -57,7 +57,7 @@
                                                object:nil];
     
     //create the segmentedControl
-    NSArray *items = [NSArray arrayWithObjects: local(@"BTC"), local(@"LTC"), local(@"FTC"), nil];
+    NSArray *items = [NSArray arrayWithObjects: local(@"BTC"), local(@"LTC"), local(@"FTC"), local(@"VTC"), nil];
     segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
     [segmentedControl setWidth:60 forSegmentAtIndex:0];
     [segmentedControl setWidth:60 forSegmentAtIndex:1];
@@ -174,6 +174,10 @@
 			[self.view setBackgroundColor:FTCColor()];
             msg = local(@"Coin changed to FTC");
 			break;
+        case VTC:
+			[self.view setBackgroundColor:VTCColor()];
+            msg = local(@"Coin changed to VTC");
+			break;
 		default:
 			break;
 	}
@@ -191,6 +195,10 @@
 			break;
         case FTC:
             label = @"f";
+			break;
+            break;
+        case VTC:
+            label = @"v";
 			break;
 		default:
 			break;

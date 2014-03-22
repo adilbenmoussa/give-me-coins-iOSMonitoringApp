@@ -32,6 +32,7 @@
     UISwitch *btcSwitch;
     UISwitch *ltcSwitch;
     UISwitch *ftcSwitch;
+    UISwitch *vtcSwitch;
 }
 
 
@@ -42,6 +43,7 @@
 @property (nonatomic, retain)  IBOutlet UISwitch *btcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *ltcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *ftcSwitch;
+@property (nonatomic, retain)  IBOutlet UISwitch *vtcSwitch;
 
 -(IBAction)scanButtonTapped:(id)sender;
 -(IBAction)switchValueChanged:(id)sender;
