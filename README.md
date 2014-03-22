@@ -15,8 +15,8 @@ The app was inspired by Give-me-coins.com Android monitoring app https://play.go
 Roadmap:
 -------------------------
 1.1
-	[ ] Add support to the Vertcoin
-	[ ] Add 'payout_history' option
+ - [ ] Add support to the Vertcoin
+ - [ ] Add 'payout_history' option
 
 
 Donations and or Suggestions:
