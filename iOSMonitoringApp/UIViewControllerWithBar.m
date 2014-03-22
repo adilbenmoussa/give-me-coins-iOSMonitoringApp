@@ -59,9 +59,10 @@
     //create the segmentedControl
     NSArray *items = [NSArray arrayWithObjects: local(@"BTC"), local(@"LTC"), local(@"FTC"), local(@"VTC"), nil];
     segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
-    [segmentedControl setWidth:60 forSegmentAtIndex:0];
-    [segmentedControl setWidth:60 forSegmentAtIndex:1];
-    [segmentedControl setWidth:60 forSegmentAtIndex:2];
+    [segmentedControl setWidth:55 forSegmentAtIndex:0];
+    [segmentedControl setWidth:55 forSegmentAtIndex:1];
+    [segmentedControl setWidth:55 forSegmentAtIndex:2];
+    [segmentedControl setWidth:55 forSegmentAtIndex:3];
     [segmentedControl addTarget:self action:@selector(segmetsValueChanged:) forControlEvents:UIControlEventValueChanged];
     
     
@@ -106,10 +107,12 @@
     BOOL showBTC = [[settings objectForKey:@"showBTC"] integerValue] == 1;
     BOOL showLTC = [[settings objectForKey:@"showLTC"] integerValue] == 1;
     BOOL showFTC = [[settings objectForKey:@"showFTC"] integerValue] == 1;
+    BOOL showVTC = ![settings objectForKey:@"showVTC"] ? YES : [[settings objectForKey:@"showVTC"] integerValue] == 1;
     
     [self.segmentedControl setEnabled:showBTC forSegmentAtIndex:BTC];
     [self.segmentedControl setEnabled:showLTC forSegmentAtIndex:LTC];
     [self.segmentedControl setEnabled:showFTC forSegmentAtIndex:FTC];
+    [self.segmentedControl setEnabled:showVTC forSegmentAtIndex:VTC];
 }
 
 
@@ -206,6 +209,27 @@
     return label;
 }
 
+- (NSString *)getCoinBySelectedCoin
+{
+    NSString *label = local(@"BTC");
+    switch (segmentedControl.selectedSegmentIndex)
+	{
+		case LTC:
+            label = local(@"LTC");
+			break;
+        case FTC:
+            label = local(@"FTC");
+			break;
+            break;
+        case VTC:
+            label = local(@"VTC");
+			break;
+		default:
+			break;
+	}
+    return label;
+}
+
 - (void)refresh:(id)sender
 {
     //NSLog(@"refresh");
@@ -246,7 +270,6 @@
 
 - (void)reset
 {
-    
 }
 
 

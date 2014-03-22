@@ -30,7 +30,7 @@
 
 @implementation SummaryController
 @synthesize workersTable;
-@synthesize dataTitleLbl, hashRateLbl, confirmedRewardsLbl, roundEstimateLbl, roundSharesLbl;
+@synthesize dataTitleLbl, hashRateLbl, confirmedRewardsLbl, roundEstimateLbl, roundSharesLbl, payoutHistoryLbl;
 @synthesize workers;
 
 - (void)dealloc
@@ -47,8 +47,13 @@
 
 - (void)fetchData
 {
+    //Gets the api url
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSDictionary *settings = [prefs dictionaryForKey:@"settings"];
+    NSString *apiKey = [settings objectForKey:@"apiKey"];
+
     //skip fetching data when no coin is selected to be shown
-    if(![self canFetchData])
+    if(![self canFetchData] && [apiKey length] != kHashKeyLength)
         return;
     
     dataTitleLbl.text = local(@"Getting data...");
@@ -59,9 +64,6 @@
     workers = [[NSMutableArray arrayWithObjects:[self firstWorker], nil] retain];
     [workersTable reloadData];
     
-    //Gets the api url
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSDictionary *settings = [prefs dictionaryForKey:@"settings"];
     NSString *apiUrl = [NSString stringWithFormat:poolMinerPrefix, [self getKeyLabelBySelectedCoin], [settings objectForKey:@"apiKey"]];
     NSURL *url = [[NSURL alloc] initWithString:apiUrl];
     
@@ -105,6 +107,7 @@
     double confirmed_rewards = [[parsedObject objectForKey:@"confirmed_rewards"] doubleValue];
     NSString *round_estimate = [parsedObject objectForKey:@"round_estimate"];
     NSString *round_shares = [parsedObject objectForKey:@"round_shares"];
+    NSString *payout_history = [parsedObject objectForKey:@"payout_history"];
     
     self.dataTitleLbl.text = [NSString stringWithFormat:local(@"Data for user %@"), username];
     if(![total_hashrate isKindOfClass:[NSNull class]])
@@ -121,9 +124,13 @@
     {
         self.roundSharesLbl.text = round_shares;
     }
+    if(![payout_history isKindOfClass:[NSNull class]])
+    {
+        self.payoutHistoryLbl.text = payout_history;
+    }
     
     NSMutableDictionary *jsonWorkers = [parsedObject objectForKey:@"workers"];
-    NSLog(@"jsonWorkers= %@", jsonWorkers);
+    //NSLog(@"jsonWorkers= %@", jsonWorkers);
     for (NSString* key in jsonWorkers) {
         id value = [jsonWorkers objectForKey:key];
         // do stuff
@@ -154,6 +161,7 @@
     self.confirmedRewardsLbl.text = @"...";
     self.roundEstimateLbl.text = @"...";
     self.roundSharesLbl.text = @"...";
+    self.payoutHistoryLbl.text = @"...";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -194,7 +202,7 @@
 //Create a fake worker in order to set the header for workers table
 - (NSMutableArray *)firstWorker
 {
-    return [NSMutableArray arrayWithObjects:local(@"Worker Name"), local(@"Worker Status"), local(@"HashRate"), @"1", nil];
+    return [NSMutableArray arrayWithObjects:local(@"Worker name"), local(@"Worker status"), local(@"Hash rate"), @"1", nil];
 }
 
 

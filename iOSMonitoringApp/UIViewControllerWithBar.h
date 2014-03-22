@@ -40,6 +40,7 @@ typedef enum
 
 - (NSString *)updateViewColor:(CoinType)coinType;
 - (NSString *)getKeyLabelBySelectedCoin;
+- (NSString *)getCoinBySelectedCoin;
 - (void)updateSegmentControl;
 - (void)settingChangedNotification:(NSNotification*)ntf;
 - (void)fetchData;

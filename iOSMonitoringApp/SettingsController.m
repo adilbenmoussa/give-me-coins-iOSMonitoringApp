@@ -24,19 +24,32 @@
 
 @interface SettingsController ()
 -(void)dismissKeyboard;
--(IBAction)saveSetting:(id)sender;
+-(void)saveSetting;
 -(IBAction)deleteSetting:(id)sender;
+-(void)keyboardDidShow;
 @end
 
 @implementation SettingsController
 @synthesize apiText, descriptionText;
-@synthesize saveSettingsButton, deleteSettingsButton;
 @synthesize btcSwitch, ltcSwitch, ftcSwitch, vtcSwitch;
+@synthesize keyBoadVisible;
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow) name:UIKeyboardDidShowNotification object:nil];
+    
+    //get the app verion
+    //NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    //NSLog(@"appVersion= %@",appVersion);
+    
     
     //sets the border of the api text border
     apiText.layer.borderWidth = 0.5f;
@@ -53,7 +66,6 @@
     
     [self.view addGestureRecognizer:tap];
     
-    
     //loads the NSUserDefaults
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSDictionary *settings = [prefs dictionaryForKey:@"settings"];
@@ -63,7 +75,7 @@
         btcSwitch.on = [[settings objectForKey:@"showBTC"] integerValue] == 1;
         ltcSwitch.on = [[settings objectForKey:@"showLTC"] integerValue] == 1;
         ftcSwitch.on = [[settings objectForKey:@"showFTC"] integerValue] == 1;
-        vtcSwitch.on = [[settings objectForKey:@"showVTC"] integerValue] == 1;
+        vtcSwitch.on = ![settings objectForKey:@"showVTC"] ? YES : [[settings objectForKey:@"showVTC"] integerValue] == 1;
         apiText.text = [settings objectForKey:@"apiKey"];
     }
     else{
@@ -71,10 +83,18 @@
     }
 }
 
+-(void)keyboardDidShow
+{
+    keyBoadVisible = YES;
+}
 
 -(void)dismissKeyboard
 {
-    [apiText resignFirstResponder];
+    if(keyBoadVisible){
+        [apiText resignFirstResponder];
+        [self saveSetting];
+        keyBoadVisible = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,7 +125,7 @@
 }
 
 
--(IBAction)saveSetting:(id)sender
+-(void)saveSetting
 {
     //NSLog(@"saveSetting...");
     
@@ -120,8 +140,6 @@
                               nil];
     [prefs setObject:settings forKey:@"settings"];
     [prefs synchronize];
-    
-    [[iToast makeText:local(@"Settins has been successfully saved.")] show];
     
     //notify the other views
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingChangedNotification" object:self userInfo:nil];
@@ -160,13 +178,15 @@
     // EXAMPLE: do something useful with the barcode data
     apiText.text = symbol.data;
     
+    [self saveSetting];
+    
     // ADD: dismiss the controller (NB dismiss from the *reader*!)
     [reader dismissModalViewControllerAnimated: YES];
 }
 
 -(IBAction)switchValueChanged:(id)sender
 {
-    //TODO: Always keep one switch enabled
+    [self saveSetting];
 }
 
 

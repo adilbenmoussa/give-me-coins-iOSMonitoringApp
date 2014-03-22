@@ -26,24 +26,23 @@
     
     UITextView *apiText;
     UITextView *descriptionText;
-    UIButton *saveSettingsButton;
-    UIButton *deleteSettingsButton;
     
     UISwitch *btcSwitch;
     UISwitch *ltcSwitch;
     UISwitch *ftcSwitch;
     UISwitch *vtcSwitch;
+    
+    BOOL keyBoadVisible;
 }
 
 
 @property (nonatomic, retain)  IBOutlet UITextView *apiText;
 @property (nonatomic, retain)  IBOutlet UITextView *descriptionText;
-@property (nonatomic, retain)  IBOutlet UIButton *saveSettingsButton;
-@property (nonatomic, retain)  IBOutlet UIButton *deleteSettingsButton;
 @property (nonatomic, retain)  IBOutlet UISwitch *btcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *ltcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *ftcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *vtcSwitch;
+@property (nonatomic, assign)  BOOL keyBoadVisible;
 
 -(IBAction)scanButtonTapped:(id)sender;
 -(IBAction)switchValueChanged:(id)sender;

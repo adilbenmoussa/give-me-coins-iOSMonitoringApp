@@ -95,7 +95,7 @@
     }
     
     //NSLog(@"parsedObject= %@", parsedObject);
-    self.poolStatusLbl.text = local(@"Give-me-coins.com Pool Status");
+    self.poolStatusLbl.text = [NSString stringWithFormat:local(@"GMC %@ Pool Status"), [self getCoinBySelectedCoin]];
     self.poolHashrateLbl.text = [self readableHashSize:[parsedObject objectForKey:@"hashrate"]];
     self.poolActiveWorkersLbl.text = [parsedObject objectForKey:@"workers"];
     self.poolSharesThisRoundLbl.text = [NSString stringWithFormat:@"%d", [[parsedObject objectForKey:@"shares_this_round"] intValue]];

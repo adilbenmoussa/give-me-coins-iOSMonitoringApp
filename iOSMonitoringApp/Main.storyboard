@@ -122,10 +122,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQn-v2-znc">
-                                <rect key="frame" x="12" y="413" width="303" height="103"/>
+                                <rect key="frame" x="10" y="383" width="303" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Once you enter your API key, please hit save settings. At this moment the data on Summary and Pool should start updating. In case you do not receive any data, press on the refresh button to try it again. I would love to hear any additional feedback and ideas to improve this app.
+                                <mutableString key="text">Once you enter your API key. At that moment the data on Summary and Pool should start updating. In case you do not receive any data, press on the refresh button to try it again. I would love to hear any additional feedback and ideas to improve this app.
 If you find any bugs please report at: https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp
 
 Donations are more than welcome:
@@ -136,7 +136,7 @@ This app uses the following libraries and icons:
 - ZBar: http://zbar.sourceforge.net/iphone/sdkdoc/
 - iToast: https://github.com/ecstasy2/toast-notifications-ios
 - Icons8: http://www.icons8.com
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
@@ -157,38 +157,22 @@ This app uses the following libraries and icons:
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dl-6L-NZs">
-                                <rect key="frame" x="199" y="371" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteSetting:" destination="UJb-iK-Nez" eventType="touchUpInside" id="Wdy-iV-I7o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dob-UL-2vh">
-                                <rect key="frame" x="30" y="371" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveSetting:" destination="UJb-iK-Nez" eventType="touchUpInside" id="nvE-Qu-x9i"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="kit-7a-yRG"/>
+                    <navigationItem key="navigationItem" title="Settings" id="kit-7a-yRG">
+                        <barButtonItem key="rightBarButtonItem" image="trashcan.png" id="b4r-3p-SbV">
+                            <connections>
+                                <action selector="deleteSetting:" destination="UJb-iK-Nez" id="6Xa-OK-Ic3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="apiText" destination="o6J-SL-NCJ" id="MHA-gz-Ebt"/>
                         <outlet property="btcSwitch" destination="d8B-na-Rbx" id="3eb-qc-a00"/>
-                        <outlet property="deleteSettingsButton" destination="9Dl-6L-NZs" id="j9f-ZH-AEw"/>
                         <outlet property="descriptionText" destination="TQn-v2-znc" id="31N-30-fnM"/>
                         <outlet property="ftcSwitch" destination="WDf-d9-dC9" id="AVq-rr-rTU"/>
                         <outlet property="ltcSwitch" destination="Spl-bk-ugP" id="EFK-IV-Oks"/>
-                        <outlet property="saveSettingsButton" destination="dob-UL-2vh" id="3X9-Xe-dsI"/>
                         <outlet property="vtcSwitch" destination="pxF-ls-IxG" id="Zbo-Rn-t94"/>
                     </connections>
                 </viewController>
@@ -425,18 +409,18 @@ This app uses the following libraries and icons:
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQj-NX-68B">
-                                <rect key="frame" x="8" y="279" width="111" height="21"/>
+                                <rect key="frame" x="8" y="315" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yoa-hP-Wgg">
-                                <rect key="frame" x="0.0" y="123" width="320" height="137"/>
+                                <rect key="frame" x="0.0" y="123" width="320" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="5xq-TK-GfU">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -497,12 +481,26 @@ This app uses the following libraries and icons:
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payout history:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toR-nG-IGz">
+                                        <rect key="frame" x="8" y="131" width="113" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C0-xL-9lp">
+                                        <rect key="frame" x="195" y="131" width="120" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-ma-vfG">
-                                <rect key="frame" x="0.0" y="308" width="320" height="210"/>
+                                <rect key="frame" x="0.0" y="344" width="320" height="174"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -518,6 +516,7 @@ This app uses the following libraries and icons:
                         <outlet property="confirmedRewardsLbl" destination="zLG-tx-CbI" id="cQ8-5B-7zK"/>
                         <outlet property="dataTitleLbl" destination="ubL-63-Nqc" id="AA4-aD-SN6"/>
                         <outlet property="hashRateLbl" destination="hTI-fB-8wf" id="Fj6-Vf-ejD"/>
+                        <outlet property="payoutHistoryLbl" destination="5C0-xL-9lp" id="mkK-IF-Ied"/>
                         <outlet property="roundEstimateLbl" destination="MQi-ce-3P9" id="yya-MO-BjR"/>
                         <outlet property="roundSharesLbl" destination="0Ae-9c-OA3" id="UTC-h8-5KZ"/>
                         <outlet property="workersTable" destination="eBQ-ma-vfG" id="2RC-BG-rvK"/>
@@ -532,6 +531,7 @@ This app uses the following libraries and icons:
         <image name="bg.png" width="640" height="1136"/>
         <image name="compass.png" width="32" height="32"/>
         <image name="photo.png" width="128" height="128"/>
+        <image name="trashcan.png" width="29" height="30"/>
         <image name="worker.png" width="32" height="32"/>
         <image name="workers.png" width="32" height="32"/>
     </resources>

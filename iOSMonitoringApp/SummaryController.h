@@ -31,6 +31,7 @@
     UILabel *confirmedRewardsLbl;
     UILabel *roundEstimateLbl;
     UILabel *roundSharesLbl;
+    UILabel *payoutHistoryLbl;
     NSMutableArray *workers;
     
 }
@@ -41,6 +42,7 @@
 @property (nonatomic, retain)  IBOutlet UILabel *confirmedRewardsLbl;
 @property (nonatomic, retain)  IBOutlet UILabel *roundEstimateLbl;
 @property (nonatomic, retain)  IBOutlet UILabel *roundSharesLbl;
+@property (nonatomic, retain)  IBOutlet UILabel *payoutHistoryLbl;
 @property (nonatomic, retain)  NSMutableArray *workers;
 
 @end
