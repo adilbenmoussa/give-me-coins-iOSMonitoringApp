@@ -32,7 +32,7 @@
     UISwitch *ftcSwitch;
     UISwitch *vtcSwitch;
     
-    BOOL keyBoadVisible;
+    BOOL keyboardVisible;
 }
 
 
@@ -42,7 +42,7 @@
 @property (nonatomic, retain)  IBOutlet UISwitch *ltcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *ftcSwitch;
 @property (nonatomic, retain)  IBOutlet UISwitch *vtcSwitch;
-@property (nonatomic, assign)  BOOL keyBoadVisible;
+@property (nonatomic, assign)  BOOL keyboardVisible;
 
 -(IBAction)scanButtonTapped:(id)sender;
 -(IBAction)switchValueChanged:(id)sender;

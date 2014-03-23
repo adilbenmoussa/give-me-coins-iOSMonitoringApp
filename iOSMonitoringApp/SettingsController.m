@@ -32,7 +32,7 @@
 @implementation SettingsController
 @synthesize apiText, descriptionText;
 @synthesize btcSwitch, ltcSwitch, ftcSwitch, vtcSwitch;
-@synthesize keyBoadVisible;
+@synthesize keyboardVisible;
 
 - (void)dealloc
 {
@@ -85,15 +85,15 @@
 
 -(void)keyboardDidShow
 {
-    keyBoadVisible = YES;
+    keyboardVisible = YES;
 }
 
 -(void)dismissKeyboard
 {
-    if(keyBoadVisible){
+    if(keyboardVisible){
         [apiText resignFirstResponder];
         [self saveSetting];
-        keyBoadVisible = NO;
+        keyboardVisible = NO;
     }
 }
 

@@ -24,7 +24,6 @@
 
 @interface SummaryController ()
 - (void)receivedJSON:(NSData *)objectNotation;
-- (void)fetchingFailedWithError:(NSError *)error;
 - (NSMutableArray *)firstWorker;
 @end
 
@@ -52,7 +51,7 @@
     NSDictionary *settings = [prefs dictionaryForKey:@"settings"];
     NSString *apiKey = [settings objectForKey:@"apiKey"];
 
-    //skip fetching data when no coin is selected to be shown
+    //skip fetching data when no coin is selected to be shown and  when the api key is not set
     if(![self canFetchData] && [apiKey length] != kHashKeyLength)
         return;
     
@@ -64,7 +63,7 @@
     workers = [[NSMutableArray arrayWithObjects:[self firstWorker], nil] retain];
     [workersTable reloadData];
     
-    NSString *apiUrl = [NSString stringWithFormat:poolMinerPrefix, [self getKeyLabelBySelectedCoin], [settings objectForKey:@"apiKey"]];
+    NSString *apiUrl = [NSString stringWithFormat:poolMinerPrefix, [self getKeyLabelBySelectedCoin], apiKey];
     NSURL *url = [[NSURL alloc] initWithString:apiUrl];
     
     if(request != nil)
