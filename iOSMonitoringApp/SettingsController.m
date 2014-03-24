@@ -47,9 +47,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow) name:UIKeyboardDidShowNotification object:nil];
     
     //get the app verion
-    //NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     //NSLog(@"appVersion= %@",appVersion);
-    
+    descriptionText.text =[NSString stringWithFormat:local(@"App info"), appVersion];
     
     //sets the border of the api text border
     apiText.layer.borderWidth = 0.5f;

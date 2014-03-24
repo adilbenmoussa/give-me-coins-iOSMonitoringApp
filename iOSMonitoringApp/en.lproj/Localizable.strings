@@ -1,0 +1,22 @@
+/**
+ * 	Copyrights reserved to the author (Adil Ben Moussa <adil.benmoussa@gmail.com>) of this code (available from Github
+ * 	repository https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp
+ *
+ *
+ *  This file is part of Give-me-coins.com Dashboard iOS App
+ *
+ *	Give-me-coins.com Dashboard is free software: you can redistribute it
+ *	and/or modify it under the terms of the GNU General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+"App info" = "Once you enter your API key. At that moment the data on Summary and Pool should start updating. In case you do not receive any data, press on the refresh button to try it again. I would love to hear any additional feedback and ideas to improve this app.\nIf you find any bugs please report at: https://github.com/adilbenmoussa/give-me-coins-iOSMonitoringApp\nDonations are more than welcome:\nBTC: 1JoAGrCyb4UneqCngzxjDvo6x4PR7AnRHz\nLTC: LZrN28A9VDfPzCVuKNikNoSp9JrwgP7AEC\nFTC: 6mobosJPJkd1AsFGvF8gA1QquBXPLnHanZ\n\nThis app uses the following libraries and icons:\n- ZBar: http://zbar.sourceforge.net/iphone/sdkdoc/\n- iToast: https://github.com/ecstasy2/toast-notifications-ios\n- Icons8: http://www.icons8.com\n\nApp version: %@";

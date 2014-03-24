@@ -32,11 +32,6 @@
 @synthesize dataTitleLbl, hashRateLbl, confirmedRewardsLbl, roundEstimateLbl, roundSharesLbl, payoutHistoryLbl;
 @synthesize workers;
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 - (void)viewDidLoad
 {
     workersTable.dataSource = self;
